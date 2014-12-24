@@ -1,0 +1,25 @@
+{
+  "name": "webpack-bug",
+  "version": "1.0.0",
+  "description": "Webpack CommonChunk + ExtractText bug isolatedexample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bug",
+    "example"
+  ],
+  "author": "Arnaud Rinquin",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.8.0",
+    "css-loader": "^0.9.0",
+    "extract-text-webpack-plugin": "^0.3.5",
+    "less": "^2.1.2",
+    "less-loader": "^2.0.0",
+    "style-loader": "^0.8.2",
+    "webpack": "^1.4.14"
+  }
+}

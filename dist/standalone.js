@@ -40,34 +40,30 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(5);
-
-	__webpack_require__(9);
+	__webpack_require__(1);
+	__webpack_require__(3);
 
 	module.exports = {
-	  name: 'standaloneOne'
+	  name: 'standalone'
 	};
 
 
 /***/ },
-
-/***/ 5:
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-
-/***/ 9:
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }
-
-/******/ })
+/******/ ])

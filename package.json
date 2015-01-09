@@ -19,6 +19,7 @@
     "extract-text-webpack-plugin": "^0.3.5",
     "less": "^2.1.2",
     "less-loader": "^2.0.0",
+    "raw-loader": "0.5.x",
     "style-loader": "^0.8.2",
     "webpack": "^1.4.14"
   }

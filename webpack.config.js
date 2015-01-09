@@ -1,13 +1,14 @@
 var path = require("path");
 
-var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var commonEntries = ["commonOne", "commonTwo"];
-var standaloneEntryPoints = ["standaloneOne", "standaloneTwo"];
+var cssExtractTextPlugin = new ExtractTextPlugin(1, "[name].css");
+var poExtractTextPlugin = new ExtractTextPlugin(2, "[name].po");
 
 var config = {
-  entry: {},
+  entry: {
+    "standalone": "./src/standalone.js"
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].js"
@@ -15,24 +16,20 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.coffee$/,
-        loader: "coffee-loader"
-      }, {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        loader: cssExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+      }, {
+        test: /\.po$/,
+        loader: poExtractTextPlugin.extract("raw-loader", "raw-loader")
       }
     ]
   },
   plugins: [
-    new CommonsChunkPlugin("common.js", commonEntries),
-    new ExtractTextPlugin("[name].css")
+    cssExtractTextPlugin,
+    poExtractTextPlugin
   ],
   bail: true,
   cache: true
 };
-
-commonEntries.concat(standaloneEntryPoints).forEach(function(entry){
-  config.entry[entry] = "./src/" + entry + ".coffee";
-});
 
 module.exports = config;
